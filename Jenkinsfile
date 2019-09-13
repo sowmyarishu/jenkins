@@ -27,8 +27,8 @@ pipeline {
 		}
 		stage('Deployment') {
 	    	steps {
-				sh 'sshpass -p "sandeep" scp gamutkart2/target/gamutkart.war sandeep@172.17.0.3:software/apache-tomcat-8.5.38/webapps'
-				sh 'sshpass -p "sandeep" ssh sandeep@172.17.0.3 "JAVA_HOME=/software/jdk1.8.0_211" "/software/apache-tomcat-8.5.38/bin/startup.sh"'
+				sh 'sshpass -p "sandeep" scp gamutkart2/target/gamutkart.war sandeep@172.17.0.3:/software/apache-tomcat-8.5.42/webapps'
+				sh 'sshpass -p "sandeep" ssh sandeep@172.17.0.3 "JAVA_HOME=/software/jdk1.8.0_211" "/software/apache-tomcat-8.5.42/bin/startup.sh"'
 	    	}
 		}
     }
